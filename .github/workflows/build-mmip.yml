@@ -41,26 +41,37 @@ jobs:
       # 5. Build the MMIP package (exclude template.js)
       - name: Build .mmip
         run: |
-          $outFile = "build/Soundchaser-TagTools.mmip"
+          $build = "build"
+          if (!(Test-Path $build)) { New-Item -ItemType Directory -Path $build | Out-Null }
 
-          # Remove existing mmip if present
-          if (Test-Path $outFile) { Remove-Item $outFile }
+          $zipPath = "$build/Soundchaser-TagTools.zip"
 
-          # Use -LiteralPath with the folder itself
-          # Exclude template.js by removing it first
-          $srcFolder = "src"
-          $templateFile = Join-Path $srcFolder "actions/template.js"
-          if (Test-Path $templateFile) { Remove-Item $templateFile }
+          # Remove existing zip
+          if (Test-Path $zipPath) { Remove-Item $zipPath }
 
-          # Compress the folder, preserving folder structure
-          Compress-Archive -Path $srcFolder\* -DestinationPath $outFile -Force
+          # Gather files, excluding template.js
+          # $filesToZip = Get-ChildItem -Path "src" -Recurse -File | Where-Object { $_.Name -ne 'template.js' }
 
-          Write-Host "✅ Built $outFile preserving folder structure"
+          # Compress preserving folder structure
+          Compress-Archive -Path "src/*" -DestinationPath $zipPath -Force
+          Write-Host "✅ Built $zipPath excluding template.js"
         shell: pwsh
 
       # 6. Upload as artifact
+      - name: Upload MMIP artifact as ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: Soundchaser-TagTools
+          path: build/Soundchaser-TagTools.zip
+
       - name: Upload MMIP artifact
         uses: actions/upload-artifact@v4
         with:
           name: Soundchaser-TagTools.mmip
           path: build/Soundchaser-TagTools.mmip
+
+      # 7. Copy the artefact to the repo and rename
+      - name: Create .mmip from ZIP
+        run: |
+          Copy-Item "build/Soundchaser-TagTools.zip" "build/Soundchaser-TagTools.mmip" -Force
+          Write-Host "✅ Created MMIP: build/Soundchaser-TagTools.mmip"
