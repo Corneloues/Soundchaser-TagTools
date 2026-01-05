@@ -17,8 +17,8 @@
 		// Calculate the padding size based on highest track number
 		let highestTrack = 0;
 		tracks.forEach(track => {
-			if (track.TrackOrder > highestTrack) {
-				highestTrack = track.TrackOrder;
+			if (track.trackNumber > highestTrack) {
+				highestTrack = track.trackNumber;
 			}
 		});
 
@@ -29,11 +29,11 @@
 
 		// Process all selected tracks
 		tracks.forEach(track => {
-			const paddedTrack = ("0000000" + track.TrackOrderStr).slice(-size);
+			const paddedTrack = ("0000000" + track.trackNumber).slice(-size);
 			
-			if (paddedTrack !== track.TrackOrderStr) {
+			if (paddedTrack !== track.trackNumber) {
 				blnModified = true;
-				track.TrackOrderStr = paddedTrack;
+				track.trackNumber = paddedTrack;
 			}
 		});
 
