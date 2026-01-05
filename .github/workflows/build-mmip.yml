@@ -1,35 +1,55 @@
-name: Build MMIP Addon
+name: Build MMIP
 
-# Trigger on push to main branch or manual run
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  build-windows:
-    name: Build Windows .mmip
+  build-mmip:
+    name: Build Soundchaser-TagTools.mmip
     runs-on: windows-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
 
-      - name: Build .mmip (Windows)
+    steps:
+      # 1. Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up PowerShell (default on Windows runners)
+      - name: Set execution policy
+        run: Set-ExecutionPolicy Bypass -Scope Process -Force
         shell: pwsh
-        run: .\scripts\build-mmip.ps1
 
-      - name: List build folder
-        run: dir .\build
+      # 3. Prepare build folder
+      - name: Create build folder
+        run: |
+          $build = "build"
+          if (!(Test-Path $build)) { New-Item -ItemType Directory -Path $build | Out-Null }
+        shell: pwsh
 
-  build-macos:
-    name: Build macOS .mmip
-    runs-on: macos-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      # 4. Update version in info.json from version.txt
+      - name: Update info.json version
+        run: |
+          $version = (Get-Content version.txt).Trim()
+          $jsonFile = "src/info.json"
+          $json = Get-Content $jsonFile | ConvertFrom-Json
+          $json.version = $version
+          $json | ConvertTo-Json -Compress | Set-Content $jsonFile
+        shell: pwsh
 
-      - name: Build .mmip (macOS)
-        run: bash ./scripts/build-mmip.sh
+      # 5. Build the MMIP package (exclude template.js)
+      - name: Build .mmip
+        run: |
+          $outFile = "build/Soundchaser-TagTools.mmip"
+          $filesToZip = Get-ChildItem -Path "src" -Recurse | Where-Object { $_.Name -ne 'template.js' }
+          Compress-Archive -Path $filesToZip -DestinationPath $outFile -Force
+          Write-Host "✅ Built $outFile excluding template.js"
+        shell: pwsh
 
-      - name: List build folder
-        run: ls -la build
+      # 6. Upload as artifact
+      - name: Upload MMIP artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Soundchaser-TagTools.mmip
+          path: build/Soundchaser-TagTools.mmip
