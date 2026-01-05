@@ -23,40 +23,42 @@ git push origin main
 
 ### Creating a Release
 
-When you're ready to publish a new stable version to users:
+When you're ready to publish a new stable version to users, you have two options:
 
-#### 1. Decide on Version Type
+#### Option A: Using GitHub Actions (Recommended)
 
-- **Patch** (`1.0.0` → `1.0.1`): Bug fixes, small tweaks
-- **Minor** (`1.0.0` → `1.1.0`): New features, new scripts
-- **Major** (`1.0.0` → `2.0.0`): Breaking changes, major rewrites
+1. Go to the **Actions** tab in GitHub
+2. Click on the **Bump Version** workflow
+3. Click the **Run workflow** dropdown button
+4. Choose the version type:
+   - **patch** (`1.0.0` → `1.0.1`): Bug fixes, small tweaks
+   - **minor** (`1.0.0` → `1.1.0`): New features, new scripts
+   - **major** (`1.0.0` → `2.0.0`): Breaking changes, major rewrites
+5. Click **Run workflow**
 
-#### 2. Bump the Version
+**What happens automatically:**
+- Updates `version.txt` with the new version
+- Commits the version change
+- Creates and pushes a version tag
+- Triggers the build workflow
+- Creates a GitHub Release with the `.mmip` file
 
-Run the appropriate PowerShell script:
+#### Option B: Using Local Scripts
+
+If you prefer to work locally with PowerShell:
 
 ```powershell
-# For bug fixes
-./scripts/bump-patch.ps1
+# 1. Bump the version
+./scripts/bump-patch.ps1    # For bug fixes
+./scripts/bump-minor.ps1    # For new features
+./scripts/bump-major.ps1    # For breaking changes
 
-# For new features
-./scripts/bump-minor.ps1
-
-# For breaking changes
-./scripts/bump-major.ps1
-```
-
-#### 3. Commit, Tag, and Push
-
-```bash
-# Commit the version change
+# 2. Commit the version change
 git add version.txt
 git commit -m "Release v1.1.0: Add new tagging feature"
 
-# Create a version tag
+# 3. Create and push the tag
 git tag v1.1.0
-
-# Push everything including the tag
 git push origin main --tags
 ```
 
@@ -65,7 +67,6 @@ git push origin main --tags
 - A new GitHub Release is automatically created
 - Release notes are auto-generated from commits
 - The `.mmip` file is attached to the release
-- Users can download or auto-update to the new version
 
 ### Version Numbering (Semantic Versioning)
 
