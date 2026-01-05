@@ -1,19 +1,29 @@
 #!/bin/bash
+# build-mmip.sh
+# Build MediaMonkey Addon (.mmip) - macOS/Linux
 
+# -------------------------
+# CONFIG
+# -------------------------
 addonName="Soundchaser-TagTools"
+version="1.0.0"   # Internal use
 root="$(cd "$(dirname "$0")/.." && pwd)"
 src="$root/src"
 build="$root/build"
-outFile="$build/$addonName.mmip"
+outFile="$build/$addonName.mmip"   # Fixed filename
 
-# Ensure build folder exists
+# -------------------------
+# PREPARE BUILD FOLDER
+# -------------------------
 mkdir -p "$build"
 
-# Remove existing build
+# Remove previous build
 [ -f "$outFile" ] && rm "$outFile"
 
-# Create zip (.mmip is just a zip)
+# -------------------------
+# CREATE ZIP (.mmip)
+# -------------------------
 cd "$src" || exit
 zip -r "$outFile" ./*
 
-echo "Built $outFile"
+echo "✅ Built $outFile"
