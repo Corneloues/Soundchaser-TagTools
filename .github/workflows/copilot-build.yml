@@ -1,0 +1,92 @@
+name: Build MMIP
+
+on: 
+  push:
+    branches: 
+      - main
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+permissions:
+  contents:  write
+
+jobs:
+  build-mmip:
+    name: Build Soundchaser-TagTools. mmip
+    runs-on:  windows-latest
+
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set execution policy
+        run: Set-ExecutionPolicy Bypass -Scope Process -Force
+        shell: pwsh
+
+      - name: Create build folder
+        run: |
+          $build = "build"
+          if (!(Test-Path $build)) { New-Item -ItemType Directory -Path $build | Out-Null }
+        shell:  pwsh
+
+      - name: Update info.json version
+        run: |
+          $version = (Get-Content version.txt).Trim()
+          $jsonFile = "src/info.json"
+          $json = Get-Content $jsonFile | ConvertFrom-Json
+          $json.version = $version
+          $json | ConvertTo-Json -Compress | Set-Content $jsonFile
+        shell: pwsh
+
+      - name: Build . mmip
+        run: |
+          $build = "build"
+          $zipPath = "$build/Soundchaser-TagTools. zip"
+          
+          if (Test-Path $zipPath) { Remove-Item $zipPath }
+          
+          $tempDir = "temp_build"
+          if (Test-Path $tempDir) { Remove-Item -Recurse -Force $tempDir }
+          Copy-Item -Path "src" -Destination $tempDir -Recurse
+          
+          $templatePath = "$tempDir/actions/template. js"
+          if (Test-Path $templatePath) { 
+            Remove-Item $templatePath
+            Write-Host "✅ Excluded template.js"
+          }
+          
+          Compress-Archive -Path "$tempDir/*" -DestinationPath $zipPath -Force
+          Remove-Item -Recurse -Force $tempDir
+          
+          Write-Host "✅ Built $zipPath"
+        shell: pwsh
+
+      - name: Create . mmip from ZIP
+        run:  |
+          Copy-Item "build/Soundchaser-TagTools.zip" "build/Soundchaser-TagTools.mmip" -Force
+          Write-Host "✅ Created MMIP: build/Soundchaser-TagTools.mmip"
+        shell: pwsh
+
+      # Only create release if this was triggered by a tag
+      - name:  Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files:  |
+            build/Soundchaser-TagTools.mmip
+            build/Soundchaser-TagTools.zip
+          generate_release_notes: true
+          draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # For regular commits, just upload as artifacts (not releases)
+      - name: Upload MMIP artifact
+        if: "!startsWith(github.ref, 'refs/tags/v')"
+        uses: actions/upload-artifact@v4
+        with:
+          name: Soundchaser-TagTools-dev
+          path: |
+            build/Soundchaser-TagTools.mmip
+            build/Soundchaser-TagTools.zip
