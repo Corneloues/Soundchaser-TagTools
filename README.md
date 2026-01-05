@@ -6,7 +6,7 @@
 2. Open the **template.js**
 3. Save the new template as **\<ActionName\>.js**
 4. Find a suitable [material icon](https://mui.com/material-ui/material-icons/)
-5. Download the icon from the material icon [GitHub](packages/mui-icons-material/material-icons). You will need to search for the icon due to GitHub limits
+5. Download the icon from the material icon [GitHub](https://github.com/mui/material-ui/tree/master/packages/mui-icons-material/material-icons). You will need to search for the icon due to GitHub limits
 6. Load the svg into [Photopea](https://www.photopea.com/)
 7. Resize to 64x64
 8. Save as **svg** and **jpg**
@@ -38,3 +38,6 @@
 2. the `TrackWorker()` function receives a `list` of `tracks`.
 3. A single `track` is processed in the `tracks.forEach(track => { /* here */ });`
 4. Always code for a single track and let the scaffolding do the hard work
+
+
+
