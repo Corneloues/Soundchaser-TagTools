@@ -1,0 +1,171 @@
+/* CSS file for Glided skin and */
+/* RegExp Find & Replace/Magic Nodes/Event Logger/Filtered Statistics scripts */
+/* by Zvezdan Dimitrijevic */
+
+body {
+}
+
+body.tbl {
+    border: 1px solid black;
+    /* MM3 */
+    /* background-color: #F1F5FF; */
+    /* MM4 */
+    background-color: #E9E9E9;
+}
+
+table {
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #F5F5F5;
+}
+
+thead {
+    height: 25px;
+    font-size: 14px;
+    color: #707070;
+    background-color: #C2C2C2;
+}
+
+td.head {
+    background: url('Glided.header.png') repeat-x;
+    background-color: #E7E7E7;
+    border-left: 1px solid #C2C2C2;
+    border-bottom: 1px solid #C2C2C2;
+}
+
+tr.even {
+    height: 18px;
+    color: black;
+    background-color: #E9E9E9;
+}
+
+tr.odd {
+    height: 18px;
+    color: black;
+    background-color: #F5F5F5;
+}
+
+tr.select {
+    height: 18px;
+    color: silver;
+    background-color: #666666;
+}
+
+.itemname {
+    font-weight: bold;
+    color: darkred;
+}
+
+.hlnumber {
+    color: black;
+    background-color: silver;
+}
+
+/* RegExp F&R specific */
+body.icon {
+    border: 1px solid black;
+    font: 11px 'Tahoma' sans-serif;
+    color: black;
+    background-color: white;
+}
+
+body.info {
+    border: 1px solid #7F9DB9;
+    font: 12px 'Courier New' monospace;
+    color: black;
+    /* MM3 */
+    /* background-color: #FAF3EE; */
+    /* MM4 */
+    background-color: #E9E9E9;
+}
+
+.hlreplace {
+    color: black;
+    background-color: yellow;
+}
+
+.hlmatch {
+    color: black;
+    background-color: lightgrey;
+}
+
+.hlrplcmtch {
+    color: black;
+    background-color: white;
+}
+
+.errexpr {
+    color: red;
+}
+
+.errcrtc {
+    color: white;
+    background-color: red;
+}
+
+.solving {
+    color: blue;
+}
+
+/* Magic Nodes specific */
+textarea {
+    border: 1px solid black;
+    font: 12px 'Courier New' monospace;
+    color: black;
+    background-color: white;
+}
+
+select {
+    font: 11px 'Tahoma' sans-serif;
+    color: black;
+    background-color: white;
+}
+
+/* Event Logger specific */
+body.menu {
+    border: 1px solid #979797;
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #F1F1F1;
+}
+
+div.select {
+    color: white;
+    background-color: #0043BD;
+}
+
+/* Filtered Statistics specific */
+h1 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: center;
+}
+
+th {
+    font-family: 'Verdana', sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #707070;
+    background: url('Glided.header.png') repeat-x;
+    background-color: #E7E7E7;
+    border-left: 1px solid #C2C2C2;
+    border-bottom: 1px solid #C2C2C2;
+}
+
+table.stat {
+    font-size: 9pt;
+}
+
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9pt;
+    color: black;
+}

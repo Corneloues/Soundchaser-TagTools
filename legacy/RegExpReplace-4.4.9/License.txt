@@ -1,0 +1,9 @@
+Legal Notice:
+This add-on is donationware and may not be distributed or sold for profit. You are free to use it for the purpose mentioned in the Description section of its download page. No part of the included software may be redistributed for any purpose without the author's consent. Commercial use of this software is not allowed without written permission of the author.
+
+This add-on is developed by me, Zvezdan Dimitrijevic, in my own free time. I am not employed by Ventis Media, the company behind MediaMonkey, nor I've been paid by them for this add-on. So, if you find it useful and/or want to help its further development, it would be nice if you send me some small donation using PayPal or direct bank transfer. You could donate as much as you think that is appropriate, any amount would be really appreciated.
+
+http://solair.eunet.rs/~zvezdand/Donate.htm
+
+Disclaimer:
+The included software is provided 'as-is', without any express or implied warranty. In no event will the author be held liable for any damages arising from the use of this software.

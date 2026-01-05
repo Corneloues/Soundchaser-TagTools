@@ -1,0 +1,172 @@
+/* CSS file for Blue Monkey skin and */
+/* RegExp Find & Replace/Magic Nodes/Event Logger/Filtered Statistics scripts */
+/* by Zvezdan Dimitrijevic */
+
+body.info, body.tbl {
+    scrollbar-face-color: #E7EBF3;
+    scrollbar-arrow-color: #889CB6;
+    scrollbar-track-color: #D6DFEE;
+    scrollbar-3dlight-color: #D6DFEE;
+    scrollbar-highlight-color: #889CB6;
+    scrollbar-shadow-color: #D6DFEE;
+    scrollbar-darkshadow-Color: #889CB6;
+}
+
+body.tbl {
+    border: 1px solid #7F9DB9;
+    background-color: #BED7F4;
+}
+
+table {
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #97B4DF;
+}
+
+thead {
+    height: 25px;
+    font-size: 11px;
+    color: black;
+    background-color: #97B4DF;
+}
+
+td.head {
+    background-color: #E8F4FF;
+    border-left: 1px solid #C7DFF8;
+    border-top: 1px solid #D2E6FB;
+    border-bottom: 3px solid #D2E6FB;
+}
+
+tr.even {
+    height: 18px;
+    color: #080000;
+    background-color: #9BB9E5;
+}
+
+tr.odd {
+    height: 18px;
+    color: #080000;
+    background-color: #9BB9E5;
+}
+
+tr.select {
+    height: 18px;
+    color: white;
+    background-color: #3169C5;
+}
+
+.itemname {
+    font-weight: bold;
+    color: gray;
+}
+
+.hlnumber {
+    color: black;
+    background-color: #E7EBF3;
+}
+
+/* RegExp F&R specific */
+body.icon {
+    border: 1px solid #7F9DB9;
+    font: 11px 'Tahoma' sans-serif;
+    color: #080000;
+    background-color: white;
+}
+
+body.info {
+    border: 1px solid #4D7CB3;
+    font: 12px 'Courier New' monospace;
+    color: #080000;
+    background-color: #BED7F4;
+}
+
+.hlreplace {
+    color: black;
+    background-color: yellow;
+}
+
+.hlmatch {
+    color: black;
+    background-color: #9BB9E5;
+}
+
+.hlrplcmtch {
+    color: black;
+    background-color: lightgrey;
+}
+
+.errexpr {
+    color: red;
+}
+
+.errcrtc {
+    color: white;
+    background-color: red;
+}
+
+.solving {
+    color: blue;
+}
+
+/* Magic Nodes specific */
+textarea {
+    border: 1px solid #7F9DB9;
+    font: 12px 'Courier New' monospace;
+    color: #080000;
+    background-color: white;
+}
+
+select {
+    font: 11px 'Tahoma' sans-serif;
+    color: #080000;
+    background-color: white;
+}
+
+/* Event Logger specific */
+body.menu {
+    border: 1px solid #4D7CB3;
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #E8F4FF;
+}
+
+div.select {
+    color: white;
+    background-color: #3169C5;
+}
+
+/* Filtered Statistics specific */
+h1 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: center;
+}
+
+th {
+    font-family: 'Verdana', sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+    background-color: #E8F4FF;
+    border-left: 1px solid #C7DFF8;
+    border-top: 1px solid #D2E6FB;
+    border-bottom: 2px solid #D2E6FB;
+}
+
+table.stat {
+    font-size: 9pt;
+}
+
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9pt;
+    color: black;
+}

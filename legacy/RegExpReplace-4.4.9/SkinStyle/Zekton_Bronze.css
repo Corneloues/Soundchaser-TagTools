@@ -1,0 +1,173 @@
+/* CSS file for Zekton_Bronze skin and */
+/* RegExp Find & Replace/Magic Nodes/Event Logger/Filtered Statistics scripts */
+/* by Zvezdan Dimitrijevic */
+
+body {
+    scrollbar-face-color: #3B252D;
+    scrollbar-arrow-color: #A6A17F;
+    scrollbar-track-color: #A6A17F;
+    scrollbar-3dlight-color: #72483F;
+    scrollbar-highlight-color: #4A2F29;
+    scrollbar-shadow-color: #3B252D;
+    scrollbar-darkshadow-Color: #72483F;
+}
+
+body.tbl {
+    border: 1px solid #69654B;
+    background-color: #C1BD9C;
+}
+
+table {
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #C1BD9C;
+}
+
+thead {
+    height: 24px;
+    font: 11px 'Zekton' sans-serif;
+    color: black;
+    background-color: #9D8643;
+}
+
+td.head {
+    background: url('Zekton_Bronze.header.png') repeat-x;
+    background-color: #CFA693;
+    border-left: 2px solid #8A6F63;
+    border-bottom: 1px solid #393726;
+}
+
+tr.even {
+    height: 18px;
+    color: #080000;
+    background-color: #C1BD9C;
+}
+
+tr.odd {
+    height: 18px;
+    color: #080000;
+    background-color: #C1BD9C;
+}
+
+tr.select {
+    height: 18px;
+    color: #A7A481;
+    background-color: #3B392C;
+}
+
+.itemname {
+    font-weight: bold;
+    color: brown;
+}
+
+.hlnumber {
+    color: black;
+    background-color: #A6A17F;
+}
+
+/* RegExp F&R specific */
+body.icon {
+    border: 1px solid #69654B;
+    font: 11px 'Tahoma' sans-serif;
+    color: #080000;
+    background-color: #BFBC9A;
+}
+
+body.info {
+    border: 1px solid #69654B;
+    font: 12px 'Courier New' monospace;
+    color: #080000;
+    background-color: #7C4C43;
+}
+
+.hlreplace {
+    color: black;
+    background-color: yellow;
+}
+
+.hlmatch {
+    color: black;
+    background-color: #CFA693;
+}
+
+.hlrplcmtch {
+    color: black;
+    background-color: lightgrey;
+}
+
+.errexpr {
+    color: red;
+}
+
+.errcrtc {
+    color: white;
+    background-color: red;
+}
+
+.solving {
+    color: blue;
+}
+
+/* Magic Nodes specific */
+textarea {
+    border: 1px solid #69654B;
+    font: 12px 'Courier New' monospace;
+    color: #080000;
+    background-color: #BFBC9A;
+}
+
+select {
+    font: 11px 'Tahoma' sans-serif;
+    color: #080000;
+    background-color: #BFBC9A;
+}
+
+/* Event Logger specific */
+body.menu {
+    border: 1px solid #69654B;
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #CFA693;
+}
+
+div.select {
+    color: black;
+    background-color: #CFA693;
+    background: url('Zekton_Bronze.selected.png') repeat-x center left;
+}
+
+/* Filtered Statistics specific */
+h1 {
+    font-family: 'Zekton', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #7C4C43;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Zekton', sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #7C4C43;
+    text-align: center;
+}
+
+th {
+    font-family: 'Zekton', sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+    background: url('Zekton_Bronze.header.png') repeat-x;
+    background-color: #CFA693;
+    border-left: 2px solid #8A6F63;
+    border-bottom: 1px solid #393726;
+}
+
+table.stat {
+    font-size: 9pt;
+}
+
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9pt;
+    color: #080000;
+}

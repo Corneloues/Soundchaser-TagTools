@@ -1,0 +1,170 @@
+/* CSS file for ZuneSkin skin and */
+/* RegExp Find & Replace/Magic Nodes/Event Logger/Filtered Statistics scripts */
+/* by Zvezdan Dimitrijevic */
+
+body {
+    /* scrollbar-face-color: #E8E8E8;
+    scrollbar-arrow-color: #777777;
+    scrollbar-track-color: #E0E0E0;
+    scrollbar-3dlight-color: #F6F6F6;
+    scrollbar-highlight-color: #F6F6F6;
+    scrollbar-shadow-color: #F6F6F6;
+    scrollbar-darkshadow-Color: #999999; */
+}
+
+body.tbl {
+    border: 1px solid #FE7F40;
+    background-color: #727272;
+}
+
+table {
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #DCDCDC;
+}
+
+thead {
+    height: 25px;
+    font-size: 14px;
+    color: #707070;
+    background-color: #AAAAAA;
+}
+
+td.head {
+    background-color: #DCDCDC;
+    border-left: 1px solid #AAAAAA;
+    border-bottom: 1px solid #AAAAAA;
+}
+
+tr.even {
+    height: 18px;
+    color: black;
+    background-color: #DCDCDC;
+}
+
+tr.odd {
+    height: 18px;
+    color: black;
+    background-color: #DCDCDC;
+}
+
+tr.select {
+    height: 18px;
+    color: black;
+    background-color: #707070;
+}
+
+.itemname {
+    font-weight: bold;
+    color: brown;
+}
+
+.hlnumber {
+    color: black;
+    background-color: #F6F6F6;
+}
+
+/* RegExp F&R specific */
+body.icon {
+    border: 1px solid #626262;
+    font: 11px 'Tahoma' sans-serif;
+    color: black;
+    background-color: #DCDCDC;
+}
+
+body.info {
+    border: 1px solid #626262;
+    font: 12px 'Courier New' monospace;
+    color: black;
+    background-color: #717171;
+}
+
+.hlreplace {
+    color: black;
+    background-color: yellow;
+}
+
+.hlmatch {
+    color: black;
+    background-color: #E8E8E8;
+}
+
+.hlrplcmtch {
+    color: black;
+    background-color: #999999;
+}
+
+.errexpr {
+    color: red;
+}
+
+.errcrtc {
+    color: white;
+    background-color: red;
+}
+
+.solving {
+    color: blue;
+}
+
+/* Magic Nodes specific */
+textarea {
+    border: 1px solid #626262;
+    font: 12px 'Courier New' monospace;
+    color: black;
+    background-color: #F0F0F0;
+}
+
+select {
+    font: 11px 'Tahoma' sans-serif;
+    color: black;
+    background-color: white;
+}
+
+/* Event Logger specific */
+body.menu {
+    border: 1px solid #979797;
+    font: 11px 'Tahoma' sans-serif;
+    background-color: #F1F1F1;
+}
+
+div.select {
+    color: white;
+    background-color: #A0A0A4;
+}
+
+/* Filtered Statistics specific */
+h1 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Verdana', sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: center;
+}
+
+th {
+    font-family: 'Verdana', sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #AAAAAA;
+    background-color: #DCDCDC;
+    border-left: 1px solid #AAAAAA;
+    border-bottom: 1px solid #AAAAAA;
+}
+
+table.stat {
+    font-size: 9pt;
+}
+
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 9pt;
+    color: black;
+}

@@ -1,0 +1,142 @@
+Scripts/Auto/SkinStyle folder contains sample .css and .png files for the Magic Nodes, RegExp Find & Replace, Event Logger and Filtered Statistics Report scripts and several popular skins. If you want to create .css file for your preferred skin which is not already supported, you could copy some existing one and modify its styles. Skins are automatically detected by their name and because of that the name of the .css file should be same as the name of the corresponding .msz file in the Skins folder.
+
+This is a description what .css files contain.
+
+General:
+--------
+- body section contains styles that are mainly for design of scrollbars (in tables and textarea); if you want to change scrollbars only for tables and not for textarea you should not use scrollbar styles in the body section, but in the body.tbl section, e.g. in Agora skin;
+    - scrollbar-face-color is the color of the thumb and the face of up/down/left/right buttons;
+    - scrollbar-arrow-color is the color of the arrows;
+    - scrollbar-track-color is the color of the scrolling area, not covered by the thumb;
+    - scrollbar-3dlight-color and
+    - scrollbar-highlight-color are colors of the left and top borders of the thumb and up/down/left/right buttons;
+    - scrollbar-shadow-color and
+    - scrollbar-darkshadow-color are colors of the right and bottom borders of the thumb and up/down/left/right buttons.
+
+- body.tbl section contains styles that are for a design of the area of some control containing a table, but not covered by this table (for example, if a table has just one or two rows and a control is much larger than that);
+    - border: width and color of the control's border;
+    - background-color: background color of the control.
+
+- table section is mainly used for the font style of the text in tables, but could be used for the foreground color of the text as well if it is same for even and odd rows;
+    - font: this is a definition of the font used for all rows in a table;
+    - color: foreground color of the text in tables.
+
+- thead section is used for table headers, if some style exists in tr section then the same style shoule be used in td.head instead of thead;
+    - font-size: some skins have larger header font than other rows in same table;
+    - height: some skins have higher header than other rows in same table;
+    - color: the foreground color of the text in the headers;
+    - background-color: the background color of the headers.
+
+- td.head section is used mainly for borders of cells for table headers;
+    - background-image: url('Glided.header.png') - instead of the background-color you could use this style with some bitmap; the bitmap should have same height as the header and is recommended that it has a small width, 8 pixels is enough since bitmap is stretched when header is displayed; this style could be put in the thead section, but in that case the highlighting of the Presets/Masks column header with .hlnumber would not work;
+    - background-color: the background color of the headers.
+    - border-left:
+    - border-top:
+    - border-right:
+    - border-bottom: some of those borders could be removed if it is not needed.
+
+- td section is used mainly for borders of table cells for all rows except the header, for example in the Agora skin with the white lines between rows; it could be skipped if it is not needed.
+
+- tr section could be used for height of table rows if it is same for even and odd rows;
+    - height: the height or all rows;
+
+- tr.even section is for even rows of tables;
+    - height: the height of the even rows;
+    - color: the foreground color of the text for even rows in a table;
+    - background-color:
+
+- tr.odd section is for odd rows of tables;
+    - height: the height of the odd rows;
+    - color: the foreground color of the text for odd rows in a table;
+    - background-color:
+
+- tr.select section is for the row selected in the Export/Import dialog box;
+    - height: the height or the selected row;
+    - color: the foreground color of the text in the selected row;
+    - background-color: the background color of the selected row;
+    - background-image: url('Glided.selected.png') - instead of the background-color you could use this style with some bitmap; the bitmap should have same height as the selected row and is recommended that it has a small width, 8 pixels is enough since bitmap is stretched when table is displayed.
+
+- .itemname section is for the name of the RegExp preset or MN mask in the Export/Import dialog;
+
+- .hlnumber section is for the number in the table when you hover with a mouse above # column or above Presets/Masks header of the table.
+
+RegExp Find & Replace specific:
+-------------------------------
+- body.icon section is for the part of the Icon dropdown that is used to display the picture with icon; it should have same styles as the static part of other dropdown lists; this style is used for a border of select element in Magic Nodes as well.
+
+- body.info section is for Original, Replacement and Result fields;
+    - border: could be same as borders for panels or edit boxes;
+    - font: 12px 'Courier New' monospace; - my recommendation;
+    - color: and
+    - background-color: could have same color values as foreground/background colors of dialog box; I do not recommend same values for colors as for edit boxes since content of those fields cannot be edited.
+
+- .hlreplace section contains highlighting colors for the part of the fields which would be replaced, also colors for cells of the table that would be replaced;
+    - background-color: yellow; - my recommendation, it should be different from .hlmatch and .hlrplcmtch.
+
+- .hlmatch section contains highlighting colors for the part of the Original field which is matched with the Find what string; text could be matched but don't need to be replaced, e.g. if replacement is same as original;
+    - color: black;
+    - background-color: lightgrey; - my recommendation, it should be different from .hlreplace and .hlrplcmtch.
+
+- .hlrplcmtch section contains highlighting colors for the part of the Replacement field which is matched with the Replace with string; mainly when Regular expression 2 is checked;
+    - color: black;
+    - background-color: white; - my recommendation, it should be different from .hlreplace and .hlmatch.
+
+- .errexpr section contain colors for the text of the error in expression; user could continue with typing;
+    - color: red; - my recommendation.
+
+- .errcrtc section contains colors for critical errors, only when SQLQuery is used; user cannot continue with typing because MM displays error dialog box which could not be suppressed; could be with the red background;
+    - color: white;
+    - background-color: red; - my recommendation.
+
+- .solving section contains color of the temporary text displayed during solving of expression; it is very shortly displayed, almost unnoticeable, except for very complicated expressions like SQLQuery;
+    - color: blue;
+
+Magic Nodes specific:
+---------------------
+- textarea section is for the Filter multi-line edit box; should have same or similar values for border and foreground/background colors as other single-line edit boxes, e.g. Mask edit box (except for the font :); unfortunately, colors of the selected part of the text cannot be modified - they are determined by Windows depending of the background color.
+    - border:
+    - font: 12px 'Courier New' monospace; - my recommendation;
+    - color:
+    - background-color:
+
+- select section is for the Field, Nodes, Sort keys and Statistics list boxes; should have same or similar values for foreground/background colors as expanded list of dropdown lists after you click on the arrow button, e.g. Position dropdown list; unfortunately, the scrollbar and the selected row for the lists boxes cannot be modified - they are determined by Windows itself.
+
+Event Logger specific:
+----------------------
+- body.menu section is for the context menu.
+    - border:
+    - font:
+    - color:
+    - background-color:
+
+- div.select section is for the selected item in the context menu.
+    - padding: some skins which have lines on the top and/or bottom of the selected item in the menu should have added this style, e.g. Agora, it is not needed with other skins;
+    - border: some skins (Agora) have lines around the selected item in the menu;
+    - color: the foreground color of the text for the selected item in the menu;
+    - background-color: the background color of the text for the selected item in the menu;
+    - background-image: url('VitreousBlue.selected.png');  - instead of the background-color you could use this style with some bitmap; the bitmap should have same height as the selected item and is recommended that it has a small width, 8 pixels is enough since bitmap is stretched when the context menu is displayed; with some skins it is same as the bitmap in the tr.select section, but for some another it is same as the bitmap in the thead section.
+
+Filtered Statistics specific:
+-----------------------------
+- h1 section is for the main title ("MediaMonkey Music Library Statistics"); with many skins you could use same styles as I did with the gray color of the text, except for some skins like Eclipse where I used dark blue;
+    - font-family: 'Verdana', sans-serif;
+    - font-size: 13pt;
+    - font-weight: bold;
+    - color: #AAAAAA;
+    - text-align: center;
+
+- h2 section is for the second title that displays the name of the current filter; I have used same values for color as previous section, only difference is the font size.
+
+- th section is for table headers in the report; you could use same font styles as I did with all skins; remaining styles in this section for the foreground/background color (or image) and borders I simply copied from the thead section.
+    - font-family: 'Verdana', sans-serif;
+    - font-size: 10pt;
+    - font-weight: bold;
+    - color: black;
+    - background-color:
+    - border-left:
+    - border-top:
+    - border-bottom:
+
+- table.stat section contains just font-size style and could be simple copied from some of my style files.
+
+- p section contains styles for the footer of the report ("Generated by...."); it could be also copied from my files, just modify color value to match your skin, e.g. it could be same as the color of the text in table rows, i.e. the color in the tr.even or tr.odd sections.
