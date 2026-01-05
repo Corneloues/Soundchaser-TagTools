@@ -43,16 +43,19 @@ jobs:
         run: |
           $outFile = "build/Soundchaser-TagTools.mmip"
 
-          # Get all files recursively in src, excluding template.js
-          $files = Get-ChildItem -Path "src" -Recurse -File | Where-Object { $_.Name -ne 'template.js' }
-
           # Remove existing mmip if present
           if (Test-Path $outFile) { Remove-Item $outFile }
 
-          # Compress-Archive requires paths as strings
-          Compress-Archive -Path $files.FullName -DestinationPath $outFile -Force
+          # Use -LiteralPath with the folder itself
+          # Exclude template.js by removing it first
+          $srcFolder = "src"
+          $templateFile = Join-Path $srcFolder "actions/template.js"
+          if (Test-Path $templateFile) { Remove-Item $templateFile }
 
-          Write-Host "✅ Built $outFile excluding template.js"
+          # Compress the folder, preserving folder structure
+          Compress-Archive -Path $srcFolder\* -DestinationPath $outFile -Force
+
+          Write-Host "✅ Built $outFile preserving folder structure"
         shell: pwsh
 
       # 6. Upload as artifact
