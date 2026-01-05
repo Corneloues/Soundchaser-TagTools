@@ -1,5 +1,11 @@
 $version = Get-Content version.txt
 $parts = $version -split '\.'
+
+if ($parts.Count -ne 3) {
+    Write-Error "Invalid version format. Expected MAJOR.MINOR.PATCH"
+    exit 1
+}
+
 $parts[0] = [int]$parts[0] + 1                              # Bump major
 $parts[1] = 0                                               # Reset minor
 $parts[2] = 0                                               # Reset patch
