@@ -11,6 +11,10 @@
 		actions.ClearEverything.execute();
     }, 'Clear Everything');
 
+    window.uitools.addToolButton('righttoolbuttons', 'PadTrackNo', function () {
+		actions.PadTrackNo.execute();
+    }, 'Pad Track Numbers');
+
 //    window.uitools.addToolButton('righttoolbuttons', 'ActionTemplate', function () {
 // 		actions.ClearEverything.execute();
 //     }, 'Action Tooltip');

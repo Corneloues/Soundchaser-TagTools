@@ -25,6 +25,14 @@
 2. Update the `confirmMessage` - **%s** will inject the total number of highlighted tracks to the message
 3. Update the `completeMessage`
 
+## Menu item ordering
+1. `grouporder: 100` - All custom actions use the same group order to keep menu items together
+2. `order:` - Set to 10 higher than the highest order value in existing action files
+   - ClearComments: order 10
+   - ClearEverything: order 20
+   - PadTrackNo: order 30
+   - New actions should follow this pattern
+
 ## Code the worker
 1. The template will always expect one or more files to have been selected in the MediaMonkey browser
 2. the `TrackWorker()` function receives a `list` of `tracks`.
