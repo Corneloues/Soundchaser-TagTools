@@ -1,5 +1,91 @@
 # Contributing to Soundchaser-TagTools
 
+## Build and Release States
+
+This project uses different workflows depending on your intent:
+
+### 1. Development Builds (No Release)
+
+**Use case:** Daily development, experiments, testing locally
+
+**How:**
+- Just commit and push to `main`
+- No tag needed
+
+**What happens:**
+- ✅ Workflow builds the `.mmip` file
+- ✅ Uploaded as a workflow artifact (available for 90 days)
+- ❌ No GitHub Release created
+- ❌ Users don't see it
+
+**Download:** Go to Actions tab → Click workflow run → Download artifact
+
+---
+
+### 2. Pre-Release (Beta/Alpha Testing)
+
+**Use case:** Share with testers before official release
+
+**Version format:** `v1.0.0-beta.1`, `v1.0.0-alpha.1`, `v1.0.0-rc.1`
+
+**How to create via GitHub Actions:**
+1. Go to **Actions** → **Bump Version**
+2. Click **Run workflow**
+3. Select version type (`patch`, `minor`, `major`)
+4. Select pre-release type (`alpha`, `beta`, or `rc`)
+5. Enter pre-release number (e.g., `1`)
+6. Click **Run workflow**
+
+**What happens:**
+- ✅ Creates a GitHub Release
+- ⚠️ Marked as "Pre-release" (orange badge)
+- ❌ NOT marked as "Latest Release"
+- ✅ Can be downloaded from Releases page
+- ✅ Testers know it's not stable
+
+---
+
+### 3. Stable Release (Production)
+
+**Use case:** Official, production-ready version for all users
+
+**Version format:** `v1.0.0` (no suffix)
+
+**How to create via GitHub Actions:**
+1. Go to **Actions** → **Bump Version**
+2. Click **Run workflow**
+3. Select version type (`patch`, `minor`, `major`)
+4. Leave pre-release type empty
+5. Click **Run workflow**
+
+**What happens:**
+- ✅ Creates a GitHub Release
+- ✅ Marked as "Latest Release" (green badge)
+- ✅ Shown on repository homepage
+- ✅ Available at stable URL: `/releases/latest/download/...`
+
+---
+
+### Version Numbering
+
+Follows [Semantic Versioning](https://semver.org/):
+
+```
+MAJOR.MINOR.PATCH[-prerelease.number]
+  │     │     │         │
+  │     │     │         └─ Pre-release identifier (optional)
+  │     │     └─────────── Bug fixes
+  │     └────────────────── New features (backward compatible)
+  └──────────────────────── Breaking changes
+```
+
+**Examples:**
+- `1.0.0` - Stable release
+- `1.1.0-beta.1` - Beta pre-release
+- `1.1.0-beta.2` - Second beta
+- `1.1.0-rc.1` - Release candidate
+- `1.1.0` - Final stable after testing
+
 ## Development Workflow
 
 This repository contains a MediaMonkey 2024 AddOn that's distributed as an `.mmip` file via GitHub Releases. 
@@ -23,9 +109,11 @@ git push origin main
 
 ### Creating a Release
 
-When you're ready to publish a new stable version to users, you have two options:
+For information on creating releases, see the [Build and Release States](#build-and-release-states) section above.
 
-#### Option A: Using GitHub Actions (Recommended)
+When you're ready to publish a new version to users:
+
+#### Using GitHub Actions (Recommended)
 
 1. Go to the **Actions** tab in GitHub
 2. Click on the **Bump Version** workflow
@@ -34,7 +122,8 @@ When you're ready to publish a new stable version to users, you have two options
    - **patch** (`1.0.0` → `1.0.1`): Bug fixes, small tweaks
    - **minor** (`1.0.0` → `1.1.0`): New features, new scripts
    - **major** (`1.0.0` → `2.0.0`): Breaking changes, major rewrites
-5. Click **Run workflow**
+5. (Optional) Select pre-release type for beta/alpha/rc releases
+6. Click **Run workflow**
 
 **What happens automatically:**
 - Updates `version.txt` with the new version
@@ -43,15 +132,13 @@ When you're ready to publish a new stable version to users, you have two options
 - Triggers the build workflow
 - Creates a GitHub Release with the `.mmip` file
 
-#### Option B: Using Local Scripts
+#### Using Local Scripts (Alternative)
 
 If you prefer to work locally with PowerShell:
 
 ```powershell
-# 1. Bump the version
-./scripts/bump-patch.ps1    # For bug fixes
-./scripts/bump-minor.ps1    # For new features
-./scripts/bump-major.ps1    # For breaking changes
+# 1. Manually update version.txt (e.g., 1.1.0 or 1.1.0-beta.1)
+# Edit version.txt
 
 # 2. Commit the version change
 git add version.txt
@@ -67,18 +154,7 @@ git push origin main --tags
 - A new GitHub Release is automatically created
 - Release notes are auto-generated from commits
 - The `.mmip` file is attached to the release
-
-### Version Numbering (Semantic Versioning)
-
-This project follows [Semantic Versioning](https://semver.org/):
-
-```
-MAJOR.MINOR.PATCH
-  │     │     │
-  │     │     └─ Bug fixes, minor changes
-  │     └─────── New features, new scripts (backward compatible)
-  └───────────── Breaking changes, significant rewrites
-```
+- Pre-release status is detected from tag name (if it contains alpha/beta/rc)
 
 ### Download URLs
 

@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*.*.*'           # Stable version tags
+      - 'v*.*.*-*'         # Pre-release tags (beta, alpha, rc)
   workflow_dispatch:
 
 permissions:
@@ -78,17 +81,21 @@ jobs:
           Write-Host "✅ Created MMIP: build/Soundchaser-TagTools.mmip"
         shell: pwsh
 
-      # 7. Commit and push to repo
-      - name: Commit and push build artifacts
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f build/Soundchaser-TagTools.zip build/Soundchaser-TagTools.mmip
-          git add src/info.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update build artifacts [skip ci]" && git push)
-        shell: pwsh
+      # 7. Create GitHub Release (only for version tags)
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            build/Soundchaser-TagTools.mmip
+            build/Soundchaser-TagTools.zip
+          generate_release_notes: true
+          draft: false
+          prerelease: ${{ contains(github.ref, 'alpha') || contains(github.ref, 'beta') || contains(github.ref, 'rc') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 8. Upload as artifacts (optional backup)
+      # 8. Upload as artifacts (for non-tagged builds)
       - name: Upload MMIP artifact as ZIP
         uses: actions/upload-artifact@v4
         with:
