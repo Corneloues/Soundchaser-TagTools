@@ -38,9 +38,21 @@ jobs:
           CURRENT="${{ steps.get_version.outputs.current }}"
           IFS='.' read -r -a parts <<< "$CURRENT"
           
+          # Validate version format
+          if [ ${#parts[@]} -ne 3 ]; then
+            echo "Error: Invalid version format in version.txt. Expected MAJOR.MINOR.PATCH"
+            exit 1
+          fi
+          
           MAJOR="${parts[0]}"
           MINOR="${parts[1]}"
           PATCH="${parts[2]}"
+          
+          # Validate that all parts are numeric
+          if ! [[ "$MAJOR" =~ ^[0-9]+$ ]] || ! [[ "$MINOR" =~ ^[0-9]+$ ]] || ! [[ "$PATCH" =~ ^[0-9]+$ ]]; then
+            echo "Error: Version parts must be numeric"
+            exit 1
+          fi
           
           case "${{ inputs.version_type }}" in
             patch)
