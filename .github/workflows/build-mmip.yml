@@ -17,9 +17,9 @@ jobs:
         uses: actions/checkout@v4
 
       # 2. Set up PowerShell (default on Windows runners)
-      - name: Set execution policy
-        run: Set-ExecutionPolicy Bypass -Scope Process -Force
-        shell: pwsh
+      # - name: Set execution policy
+      #   run: Set-ExecutionPolicy Bypass -Scope Process -Force
+      #   shell: pwsh
 
       # 3. Prepare build folder
       - name: Create build folder
@@ -29,35 +29,35 @@ jobs:
         shell: pwsh
 
       # 4. Update version in info.json from version.txt
-      - name: Update info.json version
-        run: |
-          $version = (Get-Content version.txt).Trim()
-          $jsonFile = "src/info.json"
-          $json = Get-Content $jsonFile | ConvertFrom-Json
-          $json.version = $version
-          $json | ConvertTo-Json -Compress | Set-Content $jsonFile
-        shell: pwsh
+      # - name: Update info.json version
+      #   run: |
+      #     $version = (Get-Content version.txt).Trim()
+      #     $jsonFile = "src/info.json"
+      #     $json = Get-Content $jsonFile | ConvertFrom-Json
+      #     $json.version = $version
+      #     $json | ConvertTo-Json -Compress | Set-Content $jsonFile
+      #   shell: pwsh
 
       # 5. Build the MMIP package (exclude template.js)
-      - name: Build .mmip
-        run: |
-          $outFile = "build/Soundchaser-TagTools.mmip"
+      # - name: Build .mmip
+      #   run: |
+      #     $outFile = "build/Soundchaser-TagTools.mmip"
 
-          # Get all files recursively in src, excluding template.js
-          $files = Get-ChildItem -Path "src" -Recurse -File | Where-Object { $_.Name -ne 'template.js' }
+      #     # Get all files recursively in src, excluding template.js
+      #     $files = Get-ChildItem -Path "src" -Recurse -File | Where-Object { $_.Name -ne 'template.js' }
 
-          # Remove existing mmip if present
-          if (Test-Path $outFile) { Remove-Item $outFile }
+      #     # Remove existing mmip if present
+      #     if (Test-Path $outFile) { Remove-Item $outFile }
 
-          # Compress-Archive requires paths as strings
-          Compress-Archive -Path $files.FullName -DestinationPath $outFile -Force
+      #     # Compress-Archive requires paths as strings
+      #     Compress-Archive -Path $files.FullName -DestinationPath $outFile -Force
 
-          Write-Host "✅ Built $outFile excluding template.js"
-        shell: pwsh
+      #     Write-Host "✅ Built $outFile excluding template.js"
+      #   shell: pwsh
 
       # 6. Upload as artifact
-      - name: Upload MMIP artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Soundchaser-TagTools.mmip
-          path: build/Soundchaser-TagTools.mmip
+      # - name: Upload MMIP artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: Soundchaser-TagTools.mmip
+      #     path: build/Soundchaser-TagTools.mmip
