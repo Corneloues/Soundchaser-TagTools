@@ -1,10 +1,9 @@
 $addonName = "Soundchaser-TagTools"
-$version   = "1.0.0"
 
 $root      = Resolve-Path ".."
 $src       = Join-Path $root "src"
 $build     = Join-Path $root "build"
-$outFile   = Join-Path $build "$addonName ($version).mmip"
+$outFile   = Join-Path $build "$addonName.mmip"
 
 if (!(Test-Path $build)) {
     New-Item -ItemType Directory -Path $build | Out-Null
