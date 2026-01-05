@@ -182,7 +182,7 @@ https://github.com/Corneloues/Soundchaser-TagTools/releases/download/v1.1.0/Soun
 - `version.txt` - Single source of truth for version number
 - `src/info.json` - Automatically updated with version during build
 - `scripts/bump-*.ps1` - Helper scripts to increment version
-- `.github/workflows/copilot-mmip.yml` - Builds and releases the AddOn
+- `.github/workflows/build-mmip.yml` - Builds and releases the AddOn
 
 ---
 
