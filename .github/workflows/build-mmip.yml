@@ -42,8 +42,16 @@ jobs:
       - name: Build .mmip
         run: |
           $outFile = "build/Soundchaser-TagTools.mmip"
-          $filesToZip = Get-ChildItem -Path "src" -Recurse | Where-Object { $_.Name -ne 'template.js' } | ForEach-Object { $_.FullName }
-          Compress-Archive -Path $filesToZip -DestinationPath $outFile -Force
+
+          # Get all files recursively in src, excluding template.js
+          $files = Get-ChildItem -Path "src" -Recurse -File | Where-Object { $_.Name -ne 'template.js' }
+
+          # Remove existing mmip if present
+          if (Test-Path $outFile) { Remove-Item $outFile }
+
+          # Compress-Archive requires paths as strings
+          Compress-Archive -Path $files.FullName -DestinationPath $outFile -Force
+
           Write-Host "✅ Built $outFile excluding template.js"
         shell: pwsh
 
