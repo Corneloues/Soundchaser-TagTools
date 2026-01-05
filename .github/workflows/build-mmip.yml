@@ -84,7 +84,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-    
+
 permissions:
   contents: write
 
@@ -162,7 +162,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add build/Soundchaser-TagTools.zip build/Soundchaser-TagTools.mmip
+          git add -f build/Soundchaser-TagTools.zip build/Soundchaser-TagTools.mmip
+          git add src/info.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update build artifacts [skip ci]" && git push)
         shell: pwsh
 
