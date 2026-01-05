@@ -5,3 +5,4 @@ $parts[1] = 0                                               # Reset minor
 $parts[2] = 0                                               # Reset patch
 $newVersion = "$($parts[0]).$($parts[1]).$($parts[2])"
 Set-Content version.txt $newVersion
+Write-Host "Version bumped to $newVersion"
