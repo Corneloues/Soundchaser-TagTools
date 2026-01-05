@@ -1,0 +1,10 @@
+{
+    "title": "Soundchaser Tag Tools",
+    "id": "Soundchaser",
+    "description": "A collection of scripts that optimise a large audio collection",
+    "version": "1.0.0",
+    "type": "general",
+    "author": "Quick Apps UK",
+    "icon": "icon/soundchaser.svg"
+    "url": "https://github.com/Corneloues/Soundchaser-TagTools/releases/latest/download/Soundchaser-TagTools.mmip"
+}
