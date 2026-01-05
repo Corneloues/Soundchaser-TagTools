@@ -6,11 +6,17 @@
 # CONFIG
 # -------------------------
 addonName="Soundchaser-TagTools"
-version="1.0.0"   # Internal use
+version=$(cat version.txt)
 root="$(cd "$(dirname "$0")/.." && pwd)"
 src="$root/src"
 build="$root/build"
 outFile="$build/$addonName.mmip"   # Fixed filename
+
+# -------------------------
+# GET LATEST VERSION
+# -------------------------
+jq --arg v "$version" '.version = $v' src/info.json > src/info.tmp.json
+mv src/info.tmp.json src/info.json
 
 # -------------------------
 # PREPARE BUILD FOLDER
