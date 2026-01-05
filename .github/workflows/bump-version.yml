@@ -91,11 +91,7 @@ jobs:
           
           # Add pre-release suffix if specified
           if [ -n "${{ inputs.prerelease_type }}" ]; then
-            PRERELEASE_NUM="${{ inputs.prerelease_number }}"
-            if [ -z "$PRERELEASE_NUM" ]; then
-              PRERELEASE_NUM="1"
-            fi
-            NEW_VERSION="$NEW_VERSION-${{ inputs.prerelease_type }}.$PRERELEASE_NUM"
+            NEW_VERSION="$NEW_VERSION-${{ inputs.prerelease_type }}.${{ inputs.prerelease_number }}"
           fi
           
           echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
