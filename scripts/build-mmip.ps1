@@ -5,11 +5,20 @@
 # CONFIG
 # -------------------------
 $addonName = "Soundchaser-TagTools"    # Base name
-$version   = "1.0.0"                   # Only for internal use, not in filename
+$version = Get-Content version.txt     # Current AddOn/Package Vesion
 $root      = Resolve-Path ".."         # Adjust if script moved
 $src       = Join-Path $root "src"
 $build     = Join-Path $root "build"
 $outFile   = Join-Path $build "$addonName.mmip"  # Fixed filename for MM update
+
+# -------------------------
+# GET LATEST VERSION
+# -------------------------
+# Update info.json
+$jsonFile = "src/info.json"
+$json = Get-Content $jsonFile | ConvertFrom-Json
+$json.version = $version
+$json | ConvertTo-Json -Compress | Set-Content $jsonFile
 
 # -------------------------
 # PREPARE BUILD FOLDER
