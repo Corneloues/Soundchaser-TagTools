@@ -5,9 +5,9 @@
 1. Go to the **src/actions** folder
 2. Open the **template.js**
 3. Save the new template as **<ActionName>.js**
-4. Find a suitable material icon at [link](https://mui.com/material-ui/material-icons/)
-5. Download the icon from [link](packages/mui-icons-material/material-icons). You will need to search for the icon due to GitHub limits
-6. Load the svg into  [link](https://www.photopea.com/)
+4. Find a suitable [material icon](https://mui.com/material-ui/material-icons/)
+5. Download the icon from the material icon [GitHub](packages/mui-icons-material/material-icons). You will need to search for the icon due to GitHub limits
+6. Load the svg into [Photopea](https://www.photopea.com/)
 7. Resize to 64x64
 8. Save as **svg** and **jpg**
 9. Place a **<ActionName>.svg** and **<ActionName>.jpg** in the skin\icon folder
@@ -31,3 +31,4 @@
 3. A single `track` is processed in the `tracks.forEach(track => { /* here */ });`
 
 4. Always code for a single track and let the scaffolding do the hard work
+
