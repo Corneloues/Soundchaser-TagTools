@@ -42,7 +42,7 @@ jobs:
       - name: Build .mmip
         run: |
           $outFile = "build/Soundchaser-TagTools.mmip"
-          $filesToZip = Get-ChildItem -Path "src" -Recurse | Where-Object { $_.Name -ne 'template.js' }
+          $filesToZip = Get-ChildItem -Path "src" -Recurse | Where-Object { $_.Name -ne 'template.js' } | ForEach-Object { $_.FullName }
           Compress-Archive -Path $filesToZip -DestinationPath $outFile -Force
           Write-Host "✅ Built $outFile excluding template.js"
         shell: pwsh
