@@ -1,9 +1,9 @@
 ClearComments               Done
 PadTrackNo                  Done
-SplitTitleArtist            Needs Icon
-TrimTitleArtist             Needs Icon
-ReplaceSquareBrackets       Needs Icon
-Featuring                   Needs Icon
-Versus                      Needs Icon
-FolderCover                 Needs Icon
-CapitaliseAndFix            Needs Icon
+SplitTitleArtist            CallSplit
+TrimTitleArtist             ContentCut
+ReplaceSquareBrackets       CheckBoxOutlineBlank
+Featuring                   PersonAdd
+Versus                      SportsKabaddi
+FolderCover                 AddPhotoAlternateOutlined
+CapitaliseAndFix            AutoFixHigh

@@ -1,0 +1,12 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+	<defs>
+		<image  width="26" height="64" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAABACAMAAAAzgZdtAAAAAXNSR0IB2cksfwAAAEtQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////g5kLBwAAABl0Uk5TABqd/2P3N6rsw1xAzwFsVW/VwlrrrDx01LyY/u0AAABtSURBVHic7dO5CoBAEAPQCYq6eGzj8f/f562N4CoWgniQ0kLZtI+EaQZCg58QAEIuVtLyFjroG0rBTMnZZ0+nXElhZK1woINRb8mSpbco7iglhj6saExPSlu55aCsoZTXlKSoKIlWJSM++EHaANXjL3Uu7LsUAAAAAElFTkSuQmCC"/>
+		<image  width="26" height="64" id="img2" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAABACAMAAAAzgZdtAAAAAXNSR0IB2cksfwAAAEtQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////g5kLBwAAABl0Uk5TAP+dF/VYKJXZQFzGA9V0VnJhyOimM2XLSmhz5roAAAB2SURBVHic7dTXCoBQCAZgJVoQFa33f7xoEA2iQRQE7f67goLjjconeKVMMPjXxKd2QEQS94iI5A6S0kJSm4X03dp6zuPS7+YNrhCRWUKyCkGCBL1Fdo7ofLDbmWuc0YEuz8FJIbkJJC9G5Ed0TwGHa/2Vt/w0TSU/VkGNWtIOAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { fill: none } 
+	</style>
+	<path fill-rule="evenodd" class="s0" d="m64 0v64h-64v-64z"/>
+	<use id="Layer 1" href="#img1" x="0" y="0"/>
+	<use id="Layer 2" href="#img2" x="38" y="0"/>
+</svg>
