@@ -1,0 +1,9 @@
+ClearComments               Done
+PadTrackNo                  Done
+SplitTitleArtist            Needs Icon
+TrimTitleArtist             Needs Icon
+ReplaceSquareBrackets       Needs Icon
+Featuring                   Needs Icon
+Versus                      Needs Icon
+FolderCover                 Needs Icon
+CapitaliseAndFix            Needs Icon
