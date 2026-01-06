@@ -29,8 +29,7 @@
 1. `grouporder: 100` - All custom actions use the same group order to keep menu items together
 2. `order:` - Set to 10 higher than the highest order value in existing action files
    - ClearComments: order 10
-   - ClearEverything: order 20
-   - PadTrackNo: order 30
+   - PadTrackNo: order 20
    - New actions should follow this pattern
 
 ## Code the worker

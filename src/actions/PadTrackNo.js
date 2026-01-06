@@ -84,7 +84,7 @@
 
 	window._menuItems.editTags.action.submenu.push({
 			action: actions.PadTrackNo,
-			order: 30,
+			order: 20,
 			grouporder: 100
 	});
 })();

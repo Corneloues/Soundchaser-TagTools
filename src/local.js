@@ -7,10 +7,6 @@
 		actions.ClearComments.execute();
     }, 'Clear Comments');
 
-    window.uitools.addToolButton('righttoolbuttons', 'ClearEverything', function () {
-		actions.ClearEverything.execute();
-    }, 'Clear Everything');
-
     window.uitools.addToolButton('righttoolbuttons', 'PadTrackNo', function () {
 		actions.PadTrackNo.execute();
     }, 'Pad Track Numbers');
