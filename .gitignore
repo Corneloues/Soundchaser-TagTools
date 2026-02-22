@@ -2,6 +2,12 @@
 /build/
 *.mmip
 
+# .NET / MAUI build artifacts
+bin/
+obj/
+*.user
+.vs/
+
 # OS / editor junk
 .DS_Store
 Thumbs.db
