@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/2001/XMLSchema" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- Flyout navigation -->
+  <data name="FlyoutDatabases" xml:space="preserve">
+    <value>Databases</value>
+  </data>
+  <data name="FlyoutPlaylists" xml:space="preserve">
+    <value>Playlists</value>
+  </data>
+  <data name="FlyoutHistory" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="FlyoutSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+
+  <!-- Toolbar actions -->
+  <data name="ToolbarScan" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="ToolbarRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="ToolbarFixReferences" xml:space="preserve">
+    <value>Fix References</value>
+  </data>
+  <data name="ToolbarReplaceQuality" xml:space="preserve">
+    <value>Replace Quality</value>
+  </data>
+  <data name="ToolbarFilters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="ToolbarCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+
+  <!-- Search bar -->
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+
+  <!-- Busy / progress labels -->
+  <data name="BusyScanning" xml:space="preserve">
+    <value>Scanning…</value>
+  </data>
+  <data name="BusyRefreshing" xml:space="preserve">
+    <value>Refreshing…</value>
+  </data>
+
+  <!-- Pane titles -->
+  <data name="PaneTitleDatabases" xml:space="preserve">
+    <value>Databases</value>
+  </data>
+  <data name="PaneTitleDatabaseDetails" xml:space="preserve">
+    <value>Database Details</value>
+  </data>
+  <data name="PaneTitleFileDetails" xml:space="preserve">
+    <value>File Details</value>
+  </data>
+
+  <!-- File details labels -->
+  <data name="FileDetailsType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="FileDetailsDuration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="FileDetailsCodec" xml:space="preserve">
+    <value>Codec</value>
+  </data>
+  <data name="FileDetailsBitrate" xml:space="preserve">
+    <value>Bitrate</value>
+  </data>
+  <data name="FileDetailsLastSeen" xml:space="preserve">
+    <value>Last Seen</value>
+  </data>
+  <data name="FileDetailsPlaylists" xml:space="preserve">
+    <value>Playlists</value>
+  </data>
+  <data name="FileDetailsRevealInFolder" xml:space="preserve">
+    <value>Reveal in Folder</value>
+  </data>
+  <data name="FileDetailsFixReplace" xml:space="preserve">
+    <value>Fix / Replace…</value>
+  </data>
+
+  <!-- Player controls -->
+  <data name="PlayerPlay" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="PlayerPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="PlayerStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="PlayerNoSelection" xml:space="preserve">
+    <value>No selection</value>
+  </data>
+  <data name="PlayerSelectFile" xml:space="preserve">
+    <value>Select a playable file to preview</value>
+  </data>
+
+  <!-- Page titles and placeholder text -->
+  <data name="DatabasesPageTitle" xml:space="preserve">
+    <value>Databases</value>
+  </data>
+  <data name="HistoryPageTitle" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="HistoryComingSoon" xml:space="preserve">
+    <value>Playback history coming soon.</value>
+  </data>
+  <data name="PlaylistsPageTitle" xml:space="preserve">
+    <value>Playlists</value>
+  </data>
+  <data name="PlaylistsComingSoon" xml:space="preserve">
+    <value>Playlist management coming soon.</value>
+  </data>
+  <data name="SettingsPageTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsComingSoon" xml:space="preserve">
+    <value>Application settings coming soon.</value>
+  </data>
+</root>

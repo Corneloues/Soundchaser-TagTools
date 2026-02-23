@@ -1,8 +1,10 @@
+using Soundchaser.TagTools.Maui.Resources.Strings;
+
 namespace Soundchaser.TagTools.Maui.ViewModels;
 
 public class PlayerBarViewModel : BaseViewModel
 {
-    private string _trackTitle = "Not Playing";
+    private string _trackTitle = AppStrings.PlayerNoSelection;
     public string TrackTitle
     {
         get => _trackTitle;

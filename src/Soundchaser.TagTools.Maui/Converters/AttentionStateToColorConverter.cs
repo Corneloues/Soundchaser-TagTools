@@ -7,13 +7,21 @@ public class AttentionStateToColorConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        return value is AttentionState state
-            ? state switch
-            {
-                AttentionState.Warning => Color.FromArgb("#FFF3CD"),
-                AttentionState.Error   => Color.FromArgb("#F8D7DA"),
-                _                      => Colors.Transparent
-            }
+        if (value is not AttentionState state)
+            return Colors.Transparent;
+
+        var key = state switch
+        {
+            AttentionState.Warning => "AttentionWarning",
+            AttentionState.Error   => "AttentionError",
+            _                      => null
+        };
+
+        if (key is null)
+            return Colors.Transparent;
+
+        return Application.Current?.Resources.TryGetValue(key, out var color) == true
+            ? color
             : Colors.Transparent;
     }
 
