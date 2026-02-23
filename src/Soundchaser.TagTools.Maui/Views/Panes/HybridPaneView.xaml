@@ -7,7 +7,7 @@
     <ContentView.Resources>
         <conv:AttentionStateToColorConverter x:Key="AttentionStateToColor" />
     </ContentView.Resources>
-    <Border Stroke="{AppThemeBinding Light=#CCCCCC, Dark=#444444}"
+    <Border Stroke="{AppThemeBinding Light={StaticResource PaneBorderLight}, Dark={StaticResource PaneBorderDark}}"
             StrokeThickness="1"
             WidthRequest="220">
         <Grid RowDefinitions="Auto,*">
@@ -15,7 +15,7 @@
                    Text="{Binding Title}"
                    FontAttributes="Bold"
                    Padding="8,6"
-                   BackgroundColor="{AppThemeBinding Light=#E8E8E8, Dark=#2D2D2D}" />
+                   BackgroundColor="{AppThemeBinding Light={StaticResource PaneHeaderLight}, Dark={StaticResource PaneHeaderDark}}" />
             <CollectionView Grid.Row="1"
                             ItemsSource="{Binding Items}"
                             SelectionMode="Single"

@@ -3,18 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Soundchaser.TagTools.Maui.ViewModels"
              xmlns:views="clr-namespace:Soundchaser.TagTools.Maui.Views.Panes"
+             xmlns:strings="clr-namespace:Soundchaser.TagTools.Maui.Resources.Strings"
              x:Class="Soundchaser.TagTools.Maui.Views.DatabasesPage"
-             Title="Databases">
+             Title="{x:Static strings:AppStrings.DatabasesPageTitle}">
     <ContentPage.BindingContext>
         <vm:DatabasesPageViewModel />
     </ContentPage.BindingContext>
     <Grid RowDefinitions="Auto,*,Auto">
         <!-- Toolbar -->
         <HorizontalStackLayout Grid.Row="0" Padding="8" Spacing="8">
-            <Button Text="Refresh"
+            <Button Text="{x:Static strings:AppStrings.ToolbarRefresh}"
                     Command="{Binding RefreshCommand}"
                     IsEnabled="{Binding IsNotBusy}" />
-            <SearchBar Placeholder="Search..."
+            <SearchBar Placeholder="{x:Static strings:AppStrings.SearchPlaceholder}"
                        Text="{Binding SearchText}"
                        IsEnabled="{Binding IsNotBusy}"
                        HorizontalOptions="FillAndExpand"
@@ -35,7 +36,7 @@
         </ScrollView>
         <!-- Player bar -->
         <Grid Grid.Row="2" Padding="8" RowDefinitions="Auto,Auto"
-              BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#1E1E1E}">
+              BackgroundColor="{AppThemeBinding Light={StaticResource PlayerBarLight}, Dark={StaticResource PlayerBarDark}}">
             <Label Grid.Row="0"
                    Text="{Binding PlayerBar.TrackTitle}"
                    FontAttributes="Bold"

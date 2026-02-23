@@ -4,8 +4,28 @@
     <Color x:Key="PrimaryColor">#512BD4</Color>
     <Color x:Key="SecondaryColor">#DFD8F7</Color>
     <Color x:Key="TertiaryColor">#2B0B98</Color>
+
+    <!-- Pane column (Hybrid / default) header -->
     <Color x:Key="PaneHeaderLight">#E8E8E8</Color>
     <Color x:Key="PaneHeaderDark">#2D2D2D</Color>
+
+    <!-- Database-details pane header -->
+    <Color x:Key="DbDetailHeaderLight">#DDE8FF</Color>
+    <Color x:Key="DbDetailHeaderDark">#1A2744</Color>
+
+    <!-- File-details pane header -->
+    <Color x:Key="FileDetailHeaderLight">#E8FFE8</Color>
+    <Color x:Key="FileDetailHeaderDark">#1A3320</Color>
+
+    <!-- Pane border -->
+    <Color x:Key="PaneBorderLight">#CCCCCC</Color>
+    <Color x:Key="PaneBorderDark">#444444</Color>
+
+    <!-- Player bar background -->
+    <Color x:Key="PlayerBarLight">#F5F5F5</Color>
+    <Color x:Key="PlayerBarDark">#1E1E1E</Color>
+
+    <!-- Attention state row highlights -->
     <Color x:Key="AttentionWarning">#FFF3CD</Color>
     <Color x:Key="AttentionError">#F8D7DA</Color>
 

@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Soundchaser.TagTools.Maui.Views"
+    xmlns:strings="clr-namespace:Soundchaser.TagTools.Maui.Resources.Strings"
     Title="Soundchaser TagTools"
     FlyoutBehavior="Flyout">
 
@@ -19,22 +20,22 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Databases" Icon="dotnet_bot.png">
+    <FlyoutItem Title="{x:Static strings:AppStrings.FlyoutDatabases}" Icon="dotnet_bot.png">
         <ShellContent Route="DatabasesPage"
                       ContentTemplate="{DataTemplate views:DatabasesPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Playlists" Icon="dotnet_bot.png">
+    <FlyoutItem Title="{x:Static strings:AppStrings.FlyoutPlaylists}" Icon="dotnet_bot.png">
         <ShellContent Route="PlaylistsPage"
                       ContentTemplate="{DataTemplate views:PlaylistsPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="History" Icon="dotnet_bot.png">
+    <FlyoutItem Title="{x:Static strings:AppStrings.FlyoutHistory}" Icon="dotnet_bot.png">
         <ShellContent Route="HistoryPage"
                       ContentTemplate="{DataTemplate views:HistoryPage}" />
     </FlyoutItem>
 
-    <MenuItem Text="Settings"
+    <MenuItem Text="{x:Static strings:AppStrings.FlyoutSettings}"
               Command="{Binding GoToSettingsCommand}" />
 
 </Shell>
